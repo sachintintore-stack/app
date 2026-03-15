@@ -1,8 +1,8 @@
 const express = require('express');
-const { body, query } = require('express-validator');
+const { body, query, validationResult } = require('express-validator');  // ← added validationResul
 const { StudySession, User } = require('../models');
 const { authenticate } = require('../middleware/auth');
-const { Op } = require('sequelize');
+const { Op, Sequelize: sequelize } = require('sequelize');               // ← added sequelize
 
 const router = express.Router();
 
