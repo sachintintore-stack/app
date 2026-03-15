@@ -1,10 +1,22 @@
 const express = require('express');
-const { body } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 const { User, Assignment, StudySession } = require('../models');
 const { authenticate } = require('../middleware/auth');
-const { Op } = require('sequelize');
+const { Op, Sequelize: sequelize } = require('sequelize');
 
 const router = express.Router();
+
+// Validation middleware (was missing from this file)
+const validate = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      success: false,
+      errors: errors.array()
+    });
+  }
+  next();
+};
 
 // Get user profile
 router.get('/profile', authenticate, async (req, res) => {
