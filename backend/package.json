@@ -1,0 +1,18 @@
+{
+  "name": "studyflow-backend",
+  "version": "1.0.0",
+  "description": "StudyFlow Pro Backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["study", "productivity", "saas"],
+  "author": "StudyFlow",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
