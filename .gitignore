@@ -1,7 +1,3 @@
 .env
-DB_PASSWORD
-JWT_SECRET
-RAZORPAY_KEY_SECRET
-SMTP_PASS
-.env.example
+dist
 node_modules
